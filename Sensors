@@ -1,0 +1,19 @@
+task main()
+{
+	int currentDistance = 0;
+	while(true)
+	{
+			setMotorSpeed(motorB,20);
+setMotorSpeed(motorC,20);
+currentDistance = SensorValue(S4);
+displayCenteredBigTextLine(4, "Dist: %d cm", currentDistance);
+
+if(currentDistance < 30)
+    {
+	setMotorSpeed(motorB,0);
+setMotorSpeed(motorC,0);
+	}
+   }
+
+
+   }
