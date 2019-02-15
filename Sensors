@@ -1,3 +1,4 @@
+
 task main()
 {
 	int currentDistance = 0;
@@ -11,7 +12,10 @@ displayCenteredBigTextLine(4, "Dist: %d cm", currentDistance);
 if(currentDistance < 30)
     {
 	setMotorSpeed(motorB,0);
+
 setMotorSpeed(motorC,0);
+setSoundVolume(10-(currentDistance*3));
+playTone(500,1);
 	}
    }
 
