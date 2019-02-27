@@ -1,0 +1,85 @@
+//Program ID:vsvs
+
+//Team:Aryan Khandelwal, Anna Lin, Md.Arib C, Nicholas P
+
+//Purpose: To make the robot move in a designated way
+
+//helpsthe robot move 12 inch foward
+void straight12inches()
+
+{
+	resetMotorEncoder(motorB);
+
+	resetMotorEncoder(motorC);
+
+	while((getMotorEncoder(motorB))<670)
+
+	{
+
+		setMotorSpeed(motorB,10);
+
+		setMotorSpeed(motorC,10);
+
+	}
+
+}
+
+
+//help the robot turn right 90 degree
+void turnright()
+
+{
+	resetMotorEncoder(motorB);
+
+	resetMotorEncoder(motorC);
+
+	while((getMotorEncoder(motorB))<330)
+
+	{
+
+		setMotorSpeed(motorB,10);
+
+		setMotorSpeed(motorC,0);
+
+	}
+
+}
+
+//help the robot turn left 90 degree
+void turnleft()
+
+{
+	resetMotorEncoder(motorB);
+
+	resetMotorEncoder(motorC);
+
+	while((getMotorEncoder(motorC))<330)
+
+	{
+
+		setMotorSpeed(motorB,0);
+
+		setMotorSpeed(motorC,10);
+
+	}
+
+}
+
+void stopa()
+
+{
+
+		setMotorSpeed(motorB,0);
+
+		setMotorSpeed(motorC,0);
+
+}
+task main()
+{
+straight12inches();
+turnright();
+straight12inches();
+turnleft();
+stopa();
+
+}
