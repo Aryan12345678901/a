@@ -1,0 +1,98 @@
+#pragma config(Sensor, S3,     ClourSensor,    sensorEV3_Color, modeEV3Color_Color)
+int sensorcode; 
+
+
+//helps the robot move 12 inch foward
+void greenstripe()
+
+{
+
+
+	{
+
+		setMotorSpeed(motorB,50);
+
+		setMotorSpeed(motorC,50);
+
+	}
+
+}
+
+
+//help the robot turn right 90 degree
+void yellowstripe()
+
+{
+	
+	{
+
+		setMotorSpeed(motorB,20);
+
+		setMotorSpeed(motorC,20);
+
+	}
+
+}
+
+//help the robot turn left 90 degree
+void redstripe()
+
+{
+
+	{
+
+		setMotorSpeed(motorB,0);
+
+		setMotorSpeed(motorC,0);
+
+	}
+
+}
+
+void movenormal()
+
+{
+
+		setMotorSpeed(motorB,10);
+
+		setMotorSpeed(motorC,10);
+
+}
+
+
+
+
+
+
+
+task main()
+{
+	
+
+  sensorcode = SensorValue[S3];
+
+	displayTextLine(1, "Color code: %d", sensorcode);
+//allows the progrm to use green stripe
+	if(sensorcode == 3)
+
+{
+greenstripe();
+	}
+ //allows the program to use yellow stripe
+	if(sensorcode == 4)
+
+{
+yellowstripe();
+	}
+	//allows the robot to stops
+	if(sensorcode == 5)
+
+{
+redstripe();
+	}
+	if(sensorcode == 1)
+
+{
+movenormal();
+	}
+}
