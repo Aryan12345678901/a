@@ -63,35 +63,6 @@ wait1Msec(10000);
 
 }
 
-//help the robot stop
-void redstripe()
-
-{
-
-	{
-
-		setMotorSpeed(motorB,0);
-
-		setMotorSpeed(motorC,0);
-wait1Msec(10000);
-	}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -139,18 +110,10 @@ greenstripe();
 
 yellowstripe();
 
-
 	}
-
-		if(sensorcode == 5)
-
-{
-
-redstripe();
-
-
-	}
-
+setMotorSpeed(motorB,0);
+setMotorSpeed(motorC,0);
+		
 
 }
 }
