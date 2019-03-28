@@ -53,7 +53,25 @@ void ultrasonic()
  
 touchsensor();
 
+while(SensorValue(lightSensor) < 45)   
 
+{     
+
+motor[motorC] = 70;       
+
+motor[motorB] = 80;       
+
+}       
+
+while(SensorValue(lightSensor) >= 45)  
+
+{     
+
+motor[motorC] = 80;   
+
+motor[motorB] = 0;     
+
+} 
 //allows the robot to move back
  
  setMotorSpeed(motorB,-10);
@@ -70,5 +88,46 @@ setMotorSpeed(motorB,0);
 
 
 	}
+
+}
+
+
+
+
+
+
+
+
+
+
+task main()
+
+{ 
+
+while(1==1)       
+
+{  
+
+while(SensorValue(lightSensor) < 45)   
+
+{     
+
+motor[motorC] = 70;       
+
+motor[motorB] = 80;       
+
+}       
+
+while(SensorValue(lightSensor) >= 45)  
+
+{     
+
+motor[motorC] = 80;   
+
+motor[motorB] = 0;     
+
+} 
+
+} 
 
 }
