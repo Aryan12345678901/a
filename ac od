@@ -1,0 +1,40 @@
+task main()
+
+{ 
+
+while(1==1)       
+
+{  
+
+while(SensorValue(lightSensor) < 45)   
+
+{     
+
+motor[motorC] = 70;       
+
+motor[motorB] = 80;       
+
+}       
+
+while(SensorValue(lightSensor) >= 45)  
+
+{     
+
+motor[motorC] = 80;   
+
+motor[motorB] = 0;     
+
+if(currentDistance < 10)
+	{
+	setMotorSpeed(motorB,50);
+
+	setMotorSpeed(motorC,100);
+
+
+	}
+} 
+
+
+} 
+
+}
