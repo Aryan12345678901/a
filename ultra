@@ -22,8 +22,13 @@ void ultrasonic()
 	
 	void touchsensor()
 	{
-	setMotorSpeed(motorB,0);
+	setMotorSpeed(motorB,-50);
+	setMotorSpeed(motorC,-50);
+	wait1Msec(1000);
+	
+	setMotorSpeed(motorB,50);
 	setMotorSpeed(motorC,0);
+	wait1Msec(2000)
 	}
 
 
@@ -33,27 +38,22 @@ void ultrasonic()
 	repeat(forever)
   {
 
-  //alows the motor to move at 40 percent speed
-
-  setMotorSpeed(motorB,40);
-
-	setMotorSpeed(motorC,40);
-
 
 //	currentDistance = SensorValue(S3);
 //	touchsensor = SensorValue(S2);
 
-	if(SensorValue(S3) < 20)
+	if(SensorValue(S3) < 4)
 	{
 		ultrasonic();
 	}
 
+	
 	if(SensorValue(S2)== 1)
 {
  
 touchsensor();
 
-while(SensorValue(lightSensor) < 45)   
+while(SensorValue(S3) < 45)   
 
 {     
 
