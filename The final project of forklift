@@ -19,19 +19,19 @@ wait10Msec(1000)
 
 void pickup()
 {
-setMotorSpeed(motorB,100);
-setMotorSpeed(motorC,100);
+setMotorSpeed(motorB,10);
+setMotorSpeed(motorC,10);
 wait1Msec(200);
 
-setMotorSpeed(motorA,100);
+setMotorSpeed(motorA,10);
 wait1Msec(200);
 
-setMotorSpeed(motorB,100);
+setMotorSpeed(motorB,10);
 setMotorSpeed(motorC,0);
 wait1Msec(200);
 
-setMotorSpeed(motorB,100);
-setMotorSpeed(motorC,100)
+setMotorSpeed(motorB,10);
+setMotorSpeed(motorC,10)
 wait1Msec(200);
 }
 
@@ -42,8 +42,74 @@ void detectsomething()
 	wait1Msec(300);
 }
 
+
+
+
+
+
+
+
+
+
+
 task main()
 {
+
+	setMotorSpeed(motorB,45);
+	setMotorSpeed(motorC,0);
+
+
+	//while it is detecting a black line it will move foward
+while(SensorValue(S1) == 1)
+{
+	setMotorSpeed(motorB,10);
+	setMotorSpeed(motorC,10);
+	setMotorSpeed(motorA,0);
+}
+
+
+//if it detects red it takes a left turn
+while(SensorValue(S1)== 5)
+{
+	setMotorSpeed(motorB,5);
+	setMotorSpeed(motorC,0);
+	wait1Msec(3000);
+
+	setMotorSpeed(motorB,10);
+	setMotorSpeed(motorC,10);
+	wait1Msec(4000);
+	
+	setMotorSpeed(motorA,5);
+	wait1Msec(2000);
+	
+	setMotorSpeed(motorB,-10);
+	setMotorSpeed(motorC,-10);
+	
+}
+
+//when it detects a green it takes left turn
+while(SensorValue(S1)== 3)
+{
+setMotorSpeed(motorB,10);
+	setMotorSpeed(motorC,10);
+}
+
+
+while(SensorValue(S1)== 6)
+
+{
+pickup();
+}
+
+
+
+	if (SensorValue(S2)== 5)
+	{
+	setMotorSpeed(motorB,-10);
+	setMotorSpeed(motorC,-10);
+	wait1Msec(1000);
+
+	}
 
 
 
