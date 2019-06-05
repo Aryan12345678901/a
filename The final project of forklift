@@ -46,43 +46,17 @@ setMotorSpeed(motorB,-100);
 setMotorSpeed(motorC,-100);
 wait1Msec(2000);
 }
-}
-// if it detect something on the redline
-while(SensorValue(S3) == 5)
-{
-		motor[motorC] = 20;
-	motor[motorB] =20;
-wait1Msec(2000);
-
-setMotorSpeed(motorB,100);
-	setMotorSpeed(motorC,0);
-	wait1Msec(3000);
-
-	setMotorSpeed(motorB,-50);
-	setMotorSpeed(motorC,-50);
-	wait1Msec(4000);
-
-	setMotorSpeed(motorA,5);
-	setMotorSpeed(motorB,0);
-	setMotorSpeed(motorC,0);
-	wait1Msec(1000);
-
-	setMotorSpeed(motorB,100);
-	setMotorSpeed(motorC,100);
-	wait1Msec(2000);
-
-	setMotorSpeed(motorB,0);
-setMotorSpeed(motorC,100);
-wait1Msec(2700);
-
-setMotorSpeed(motorB,-100);
-setMotorSpeed(motorC,-100);
-wait1Msec(2000);
-}
 while(SensorValue(S2) < 5)
 {
 setMotorSpeed(motorB,0);
 setMotorSpeed(motorC,0);
 wait1Msec(1000000);
 }
+while(SensorValue(S1) == 5)
+{
+setMotorSpeed(motorB,100);
+setMotorSpeed(motorC,0);
+wait1Msec(1000000);
+}
+
 }
