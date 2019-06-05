@@ -4,6 +4,10 @@
 
 task main()
 {
+displayCenteredBigTextLine(4, "Dist: %d cm", SensorValue(S3));
+
+
+
 //is a while loop so it does this for the eternity
 while(1==1)
 {
