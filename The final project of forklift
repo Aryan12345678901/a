@@ -46,15 +46,17 @@ setMotorSpeed(motorB,-100);
 setMotorSpeed(motorC,-100);
 wait1Msec(2000);
 }
+
+
 while(SensorValue(S2) < 5)
 {
 setMotorSpeed(motorB,0);
 setMotorSpeed(motorC,0);
 wait1Msec(1000000);
 }
-while(SensorValue(S1) == 5)
+while(SensorValue(S1) == 1)
 {
-setMotorSpeed(motorB,100);
+setMotorSpeed(motorB,0);
 setMotorSpeed(motorC,0);
 wait1Msec(1000000);
 }
