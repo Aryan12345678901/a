@@ -1,0 +1,20 @@
+
+task main()
+{
+setMotorSpeed(motorB,100);
+setMotorSpeed(motorC,-100);
+wait1Msec(5000);
+setMotorSpeed(motorB,0);
+setMotorSpeed(motorC,0);
+wait1Msec(5000);
+setMotorSpeed(motorB,100);
+setMotorSpeed(motorC,0);
+wait1Msec(5000);
+setMotorSpeed(motorB,0);
+setMotorSpeed(motorC,0);
+wait1Msec(5000);
+setMotorSpeed(motorB,100);
+setMotorSpeed(motorC,40);
+wait1Msec(5000);
+
+}
